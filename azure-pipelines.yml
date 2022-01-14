@@ -17,6 +17,11 @@ steps:
   inputs:
     packageType: sdk
     version: '$(dotnetSdkVersion)'
+    
+- checkout: self
+  displayName: 'Clear cache'
+  clean: false
+  fetchDepth: 1
 
 - task: Npm@1
   displayName: 'Run npm install'
