@@ -18,6 +18,9 @@ steps:
     packageType: sdk
     version: '$(dotnetSdkVersion)'
     
+- script: 'npm cache clear --force'
+  displayName: 'Clear NPM Cache'
+
 - task: Npm@1
   displayName: 'Run npm install'
   inputs:
